@@ -30,10 +30,10 @@ int main(int argc,char* argv[])
         while ((pid = wait(&status)) > 0)
         {
 		for (int i = 1; i <= N; i++) 
-        {
-        if (i % 2 == 0)
-        cout << i << " ";
-        }
+        	{
+        	if (i % 2 == 0)
+        	cout << i << " ";
+        	}
         }
         if ( WIFEXITED(status) )
         {
