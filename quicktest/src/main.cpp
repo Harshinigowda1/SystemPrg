@@ -18,12 +18,12 @@ int main(int argc,char* argv[])
 	{
 		
 		for (int i = 1; i <= N; i++) 
-        {
-        if (i % 2 != 0)
-        cout << "\t"<<i << " ";
+        	{
+        	if (i % 2 != 0)
+        	cout << "\t"<<i << " ";
         
-        }
-        exit(0);
+        	}
+        	exit(0);
 	}
 	else
 	{
@@ -37,12 +37,12 @@ int main(int argc,char* argv[])
         }
         if ( WIFEXITED(status) )
         {
-            return EXIT_SUCCESS;
+            return "EXIT_SUCCESS";
         }
         else
         {
             cerr<<"abnormal child termination"<<endl;
-            return EXIT_FAILURE;
+            return "EXIT_FAILURE";
 
         }
 
