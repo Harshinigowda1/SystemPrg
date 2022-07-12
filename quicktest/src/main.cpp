@@ -27,13 +27,11 @@ int main(int argc,char* argv[])
 	}
 	else
 	{
-        while ((pid = wait(&status)) > 0)
+        wait(&status);
+        for (int i = 1; i <= N; i++) 
         {
-		for (int i = 1; i <= N; i++) 
-        	{
         	if (i % 2 == 0)
         	cout << i << " ";
-        	}
         }
         if ( WIFEXITED(status) )
         {
