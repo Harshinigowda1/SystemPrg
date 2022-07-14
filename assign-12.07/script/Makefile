@@ -13,7 +13,7 @@ app: $(OBJ)/main.o
 	mv app $(BIN)
 
 $(OBJ)/main.o: $(SRC)/main.cpp
-	$(CC) $(CFLAGS) $(SRC)/main.cpp -I $(INCLUDE)
+	$(CC) $(CFLAGS) $(SRC)/main.cpp -I $(INC)
 		mv *.o $(OBJ)
 
 clean:
