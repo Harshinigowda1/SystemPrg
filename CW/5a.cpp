@@ -5,13 +5,13 @@
 
 using namespace std;
 
-class Words{
+class Word{
 private:
     char *words[5];
     int count;
 public:
-    Words(){ count=0; }
-    ~Words() { 
+    Word(){ count=0; }
+    ~Word() { 
         for(int i=0;i<count;i++)
         delete words[i];
     }
@@ -32,6 +32,18 @@ public:
             count+=1;
         }
     }
+    int MaxWords(){
+        int max=strlen(words[0]);
+        int pos=0;
+        for(int i=1;i<count;i++){
+        if(max < strlen(words[i])){
+            max = strlen(words[i]);
+            pos = i;
+
+        }
+        }
+        return pos;
+    }
     void displwrd(){
         for(int i=0;i<count;i++)
         cout<<words[i]<<" ";
@@ -47,30 +59,19 @@ public:
         }
         return false;
     }
-    int MaxWords(){
-        int max=strlen(words[0]);
-        int pos=0;
-        for(int i=1;i<count;i++){
-        if(max < strlen(words[i])){
-            max = strlen(words[i]);
-            pos = i;
-
-        }
-        }
-        return pos;
-    }
+    
 };
 
 int main(){
 
-    Words ws;
+    Words wrds;
     string line;
     getline(cin, line);
 
-    ws.setWords((char *)line.c_str());
-    ws.displwrd();
+    wrds.setWords((char *)line.c_str());
+    wrds.displwrd();
 
-    cout<<"Max of all Words: "<<ws.MaxW(ws.MaxWords())<<endl;
+    cout<<"Max of all Words: "<<wrds.MaxW(wrds.MaxWords())<<endl;
     cout<<"\n Enter the word to search: "<<endl;
     string key;
     cin>>key;
@@ -78,10 +79,10 @@ int main(){
     string rep;
     cin>>rep;
 
-    if(ws.SrchReplace((char *)key.c_str(),(char *)rep.c_str())==true)
+    if(wrds.SrchReplace((char *)key.c_str(),(char *)rep.c_str())==true)
     {
         cout<<"After Replacing "<<endl;
-        ws.displwrd();
+        wrds.displwrd();
     }
     return 0;
 }
